@@ -1,5 +1,7 @@
 # projeto-crud-vue3
 
+- Início da implementação do crud local com listas
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
@@ -13,7 +15,9 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-npm install
+npm install vue@3.2.26
+npm install primevue@3.53.1
+npm install primeicons@7.0.0
 ```
 
 ### Compile and Hot-Reload for Development
@@ -27,4 +31,3 @@ npm run dev
 ```sh
 npm run build
 ```
-"# projeto-crud-vue3" 
