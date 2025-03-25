@@ -51,6 +51,11 @@ const users = reactive([
     { id: 2, name: "Maria Souza", email: "maria@exemplo.com" },
 ]);
 
+
+if (localStorage.getItem("users").length > 0) {
+    users.value = { ...JSON.parse(localStorage.getItem("users")) };
+}
+
 const newUser = reactive({ name: "", email: "" });
 const editingUser = ref(null);
 const addingUser = ref(null);
@@ -62,6 +67,7 @@ const addUser = () => {
     });
     newUser.name = "";
     newUser.email = "";
+    localStorage.setItem("users", JSON.stringify(users));
 };
 
 const addNewUser = () => {
@@ -78,6 +84,7 @@ const updateUser = () => {
         users[index] = { ...editingUser.value };
     }
     editingUser.value = null;
+    localStorage.setItem("users", JSON.stringify(users));
 };
 
 const deleteUser = (id) => {
@@ -87,6 +94,7 @@ const deleteUser = (id) => {
     } else {
         users.pop();
     }
+    localStorage.setItem("users", JSON.stringify(users));
 };
 
 const cancelEdit = () => {
